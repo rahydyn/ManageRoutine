@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <title>Manage Your Routine</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/jquery-2.1.3.min.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="logo">
+        <a href="#"><img src="./img/logo.png" alt="" /></a>
+      </div>
+    </header>
+    <div id="container">
+      <div class="first_time" id="init">
+        <table id="init_table">
+          <tr>
+            <th><span>合計で貯めたい金額</span></th>
+            <th><span>いつまでに？</span></th>
+            <th><span>毎月の貯金額</span></th>
+            <th><span>現在の貯金額</span></th>
+          </tr>
+          <tr>
+            <td><input type="text" id="input_total" /></td>
+            <td><input type="text" id="input_period" /></td>
+            <td><input type="text" id="input_permonth" /></td>
+            <td><input type="text" id="input_savings" /></td>
+          </tr>
+        </table>
+        <button id="init-btn">登録</button>
+      </div>
+      <div class="main">
+        <div class="container-calendar">
+          <h4 id="monthAndYear"></h4>
+          <div class="button-container-calendar">
+            <div>
+              <button id="previous" onclick="previous()">‹</button>
+            </div>
+            <div class="footer-container-calendar">
+              <label for="month">月指定：</label>
+              <select id="year" onchange="jump()"></select>
+              <select id="month" onchange="jump()">
+                <option value="0">1月</option>
+                <option value="1">2月</option>
+                <option value="2">3月</option>
+                <option value="3">4月</option>
+                <option value="4">5月</option>
+                <option value="5">6月</option>
+                <option value="6">7月</option>
+                <option value="7">8月</option>
+                <option value="8">9月</option>
+                <option value="9">10月</option>
+                <option value="10">11月</option>
+                <option value="11">12月</option>
+              </select>
+            </div>
+            <div>
+              <button id="next" onclick="next()">›</button>
+            </div>
+          </div>
+
+          <table class="table-calendar" id="calendar" data-lang="ja">
+            <thead id="thead-month"></thead>
+            <tbody id="calendar-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="./js/myr.js"></script>
+  </body>
+</html>
