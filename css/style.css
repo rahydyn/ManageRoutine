@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+:root {
+}
+
 body {
 }
 
@@ -25,8 +28,8 @@ header {
   writing-mode: horizontal-tb;
 }
 
-#init_table tr {
-  width: auto;
+#init_table #table_select {
+  display: grid;
 }
 
 .wrapper {
@@ -69,6 +72,11 @@ header {
 .date-picker.selected span {
   border-bottom: 2px solid currentColor;
 }
+
+.date-checked {
+  background-color: red;
+}
+
 /* 日曜 */
 .date-picker:nth-child(1) {
   color: red;
@@ -100,7 +108,7 @@ header {
   margin-top: 1em;
   padding: 10px 0;
 }
-.footer-container-calendar select {
+select {
   cursor: pointer;
   display: inline-block;
   zoom: 1;
@@ -109,4 +117,24 @@ header {
   border: 1px solid #bfc5c5;
   border-radius: 3px;
   padding: 5px 1em;
+}
+
+#footer-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#done-btn {
+  margin-top: 60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  border: 0;
+  background-color: #00a2b7;
+  background: radial-gradient(#00a2ff, #00a2b7);
+  color: white;
+  font-size: large;
+  font-weight: 800;
+  cursor: pointer;
 }
