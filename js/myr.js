@@ -3,9 +3,9 @@ function initialize() {
     let json_data = makeJsondata();
   }
 
-  input_date = new Date().getDate();
-  input_month = new Date().getMonth();
-  input_year = new Date().getFullYear();
+  let new_date = new Date().getDate();
+  let new_month = new Date().getMonth();
+  let new_year = new Date().getFullYear();
   let input_total_state;
   let input_period_year_state;
   let input_period_month_state;
@@ -18,14 +18,14 @@ function initialize() {
     input_period_month_state = document.getElementById("input_period_month");
     input_permonth_state = document.getElementById("input_permonth");
     input_savings_state = document.getElementById("input_savings");
-    input_period_year_state.value = input_year;
-    input_period_month_state.value = input_month;
+    input_period_year_state.value = new_year;
+    input_period_month_state.value = new_month;
 
     // イベント「input」を登録
     input_total_state.addEventListener("change", function () {
       calcPerMonth(
-        input_month,
-        input_year,
+        new_month,
+        new_year,
         input_period_month_state,
         input_period_year_state,
         input_total_state,
@@ -34,8 +34,8 @@ function initialize() {
     });
     input_period_year_state.addEventListener("change", function () {
       calcPerMonth(
-        input_month,
-        input_year,
+        new_month,
+        new_year,
         input_period_month_state,
         input_period_year_state,
         input_total_state,
@@ -44,8 +44,8 @@ function initialize() {
     });
     input_period_month_state.addEventListener("change", function () {
       calcPerMonth(
-        input_month,
-        input_year,
+        new_month,
+        new_year,
         input_period_month_state,
         input_period_year_state,
         input_total_state,
@@ -54,8 +54,8 @@ function initialize() {
     });
     input_permonth_state.addEventListener("change", function () {
       calcPeriod(
-        input_month,
-        input_year,
+        new_month,
+        new_year,
         input_period_month_state,
         input_period_year_state,
         input_total_state,
@@ -66,9 +66,9 @@ function initialize() {
   });
 
   $("#init-btn").on("click", function () {
-    json_data["input_date"] = input_date;
-    json_data["input_month"] = input_month;
-    json_data["input_year"] = input_year;
+    json_data["input_date"] = new_date;
+    json_data["input_month"] = new_month;
+    json_data["input_year"] = new_year;
     json_data["input_period_month"] = Number(input_period_month_state.value);
     json_data["input_period_year"] = Number(input_period_year_state.value);
     json_data["input_total"] = Number(input_total_state.value);
@@ -128,9 +128,9 @@ monthAndYear = document.getElementById("monthAndYear");
 main();
 
 function main() {
-  if (!localStorage.getItem("ManageYourRoutine")) {
+  // if (!localStorage.getItem("ManageYourRoutine")) {
     initialize();
-  }
+    // }
   let json_data = JSON.parse(localStorage.getItem("ManageYourRoutine"));
   reloadPage(json_data);
 }
