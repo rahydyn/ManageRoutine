@@ -1,0 +1,31 @@
+#bcg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: rgb(131, 58, 180);
+  background: linear-gradient(
+    45deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  text-align: center;
+}
+
+#card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.25); /* カード背景の色＋不透明度 */
+  backdrop-filter: blur(10px); /* 背景のぼかし具合 */
+  border-radius: 16px; /* 角の丸み */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* 外側の影 */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* 縁のスタイル */
+}
+
+h1 {
+  color: white;
+}

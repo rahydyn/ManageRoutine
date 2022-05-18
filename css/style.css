@@ -1,9 +1,71 @@
 @charset "utf-8";
-
+/* 
 :root {
+} */
+
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  color: white;
 }
 
-body {
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.first_time {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(131, 58, 180);
+  background: linear-gradient(
+    30deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+.first_time > div {
+  margin-top: 30px;
+  padding: 30px;
+  color: white;
+  font-weight: 10;
+}
+
+#init-btn {
+  height: 40px;
+  width: 64px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#init-btn:hover {
+  background: rgba(255, 255, 255, 0.8); /* カード背景の色＋不透明度 */
+  color: black;
+  cursor: pointer;
+}
+
+.main {
+  display: none;
+  height: 100%;
+  background-color: rgb(131, 58, 180);
+  background: linear-gradient(
+    45deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 
 header {
@@ -12,6 +74,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.glassmorphism {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.25); /* カード背景の色＋不透明度 */
+  backdrop-filter: blur(10px); /* 背景のぼかし具合 */
+  border-radius: 16px; /* 角の丸み */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* 外側の影 */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* 縁のスタイル */
 }
 
 #logo img {
@@ -39,9 +110,16 @@ header {
 .container-calendar {
   background: #ffffff;
   padding: 15px;
-  width: 100%;
+  width: 98%;
   margin: 0 auto;
   overflow: auto;
+  background-color: rgb(131, 58, 180);
+  background: linear-gradient(
+    30deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 .button-container-calendar button {
   cursor: pointer;
@@ -73,8 +151,8 @@ header {
   border-bottom: 2px solid currentColor;
 }
 
-.date-checked {
-  background-color: red;
+.date-picker.checked {
+  background-color: green;
 }
 
 /* 日曜 */
@@ -105,9 +183,17 @@ header {
   float: right;
 }
 .footer-container-calendar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: 1em;
   padding: 10px 0;
 }
+.footer-container-calendar > div {
+  margin-top: 20px;
+}
+
 select {
   cursor: pointer;
   display: inline-block;
@@ -122,9 +208,13 @@ select {
 #footer-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
-
+#footer-container > div {
+  margin: 20px;
+}
 #done-btn {
   margin-top: 60px;
   width: 120px;
